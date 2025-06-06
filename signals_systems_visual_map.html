@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signals & Systems Concept Map</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: auto;
+        }
+
+        .concept-map {
+            position: relative;
+            width: 1500px;
+            height: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .node {
+            position: absolute;
+            padding: 12px 18px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Root node */
+        .root {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            width: 200px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50px;
+            top: 450px;
+            left: 600px;
+        }
+
+        /* Domain nodes */
+        .domain {
+            background: linear-gradient(135deg, #4834d4, #6c5ce7);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .ct-domain { top: 450px; left: 350px; } /* Adjusted position */
+        .dt-domain { top: 450px; left: 900px; } /* Adjusted position */
+
+        /* TLO nodes */
+        .tlo {
+            font-size: 14px;
+            font-weight: bold;
+            width: 180px;
+            height: 45px;
+            line-height: 22px;
+            padding: 10px 15px;
+        }
+
+        .tlo2 { background: linear-gradient(135deg, #00d2d3, #54a0ff); color: white; }
+        .tlo3 { background: linear-gradient(135deg, #ff9ff3, #f368e0); color: white; }
+        .tlo4 { background: linear-gradient(135deg, #7bed9f, #2ed573); color: white; }
+        .tlo5 { background: linear-gradient(135deg, #ffa726, #ff7043); color: white; }
+        .tlo6 { background: linear-gradient(135deg, #ff6b9d, #c44569); color: white; }
+        .tlo7 { background: linear-gradient(135deg, #a4b0be, #747d8c); color: white; }
+
+        /* CT TLO positions */
+        .ct-basic-signals { top: 150px; left: 50px; } /* Adjusted position */
+        .ct-transformations { top: 150px; left: 275px; } /* Adjusted position */
+        .ct-characterization { top: 150px; left: 500px; } /* Adjusted position */
+        .ct-lccde { top: 450px; left: 50px; } /* Adjusted position */
+        .ct-lti { top: 700px; left: 275px; } /* Adjusted position */
+
+        /* DT TLO positions */
+        .dt-basic-signals { top: 150px; left: 750px; } /* Adjusted position */
+        .dt-transformations { top: 150px; left: 975px; } /* Adjusted position */
+        .dt-characterization { top: 150px; left: 1200px; } /* Adjusted position */
+        .dt-lccde { top: 450px; left: 1150px; } /* Adjusted position */
+        .dt-lti { top: 700px; left: 925px; } /* Adjusted position */
+
+        /* Detail nodes */
+        .detail {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 11px;
+            width: 120px;
+            height: 25px;
+            line-height: 25px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Detail positions for CT */
+        .ct-detail-1 { top: 225px; left: 20px; }
+        .ct-detail-2 { top: 225px; left: 160px; }
+        .ct-detail-3 { top: 260px; left: 90px; }
+        .ct-detail-4 { top: 70px; left: 250px; }
+        .ct-detail-5 { top: 70px; left: 390px; }
+        .ct-detail-6 { top: 105px; left: 320px; }
+        .ct-detail-7 { top: 225px; left: 465px; }
+        .ct-detail-8 { top: 225px; left: 605px; }
+        .ct-detail-9 { top: 260px; left: 535px; }
+        .ct-detail-10 { top: 400px; left: 20px; }
+        .ct-detail-11 { top: 400px; left: 160px; }
+        .ct-detail-12 { top: 600px; left: 180px; }
+        .ct-detail-13 { top: 600px; left: 320px; }
+        .ct-detail-14 { top: 600px; left: 460px; }
+        .ct-detail-15 { top: 650px; left: 250px; }
+        .ct-detail-16 { top: 650px; left: 390px; }
+
+        /* Detail positions for DT */
+        .dt-detail-1 { top: 70px; left: 720px; }
+        .dt-detail-2 { top: 70px; left: 860px; }
+        .dt-detail-3 { top: 105px; left: 790px; }
+        .dt-detail-4 { top: 225px; left: 940px; }
+        .dt-detail-5 { top: 225px; left: 1080px; }
+        .dt-detail-6 { top: 260px; left: 1010px; }
+        .dt-detail-7 { top: 70px; left: 1170px; }
+        .dt-detail-8 { top: 70px; left: 1310px; }
+        .dt-detail-9 { top: 105px; left: 1240px; }
+        .dt-detail-10 { top: 400px; left: 1120px; }
+        .dt-detail-11 { top: 400px; left: 1260px; }
+        .dt-detail-12 { top: 600px; left: 820px; }
+        .dt-detail-13 { top: 600px; left: 960px; }
+        .dt-detail-14 { top: 600px; left: 1100px; }
+        .dt-detail-15 { top: 650px; left: 890px; }
+        .dt-detail-16 { top: 650px; left: 1030px; }
+
+        /* Connection lines */
+        .connection {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            transform-origin: left center;
+        }
+
+        /* Main connections */
+        .conn-root-ct {
+            width: 400px; /* Adjusted width */
+            height: 2px;
+            top: 480px;
+            left: 250px; /* Centered connection */
+        }
+        
+        .conn-root-ct-up {
+            width: 300px; /* Adjusted width */
+            height: 2px;
+            top: 480px;
+            left: 450px; /* Centered connection */
+            transform: rotate(-100deg);
+        }
+
+        .conn-root-ct-down {
+            width: 100px; /* Adjusted width */
+            height: 2px;
+            top: 620px;
+            left: 425px; /* Centered connection */
+            transform: rotate(-80deg);
+        }
+
+        .conn-root-dt {
+            width: 400px; /* Adjusted width */
+            height: 2px;
+            top: 480px;
+            left: 800px; /* Centered connection */
+        }
+        
+        .conn-root-dt-up {
+            width: 280px; /* Adjusted width */
+            height: 2px;
+            top: 250px;
+            left: 1040px; /* Centered connection */
+            transform: rotate(100deg);
+        }
+
+        .conn-root-dt-down {
+            width: 150px; /* Adjusted width */
+            height: 2px;
+            top: 480px;
+            left: 1000px; /* Centered connection */
+            transform: rotate(80deg);
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 15px;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .node {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .node:nth-child(odd) { animation-delay: 0.1s; }
+        .node:nth-child(even) { animation-delay: 0.2s; }
+    </style>
+</head>
+<body>
+    <div class="concept-map">
+        <!-- Connection lines -->
+        <div class="connection conn-root-ct"></div>
+        <div class="connection conn-root-dt"></div>
+        <div class="connection conn-root-ct-up"></div>
+        <div class="connection conn-root-ct-down"></div>
+        <div class="connection conn-root-dt-up"></div>
+        <div class="connection conn-root-dt-down"></div>
+        
+        <!-- Root node -->
+        <div class="node root">Signals & Systems</div>
+        
+        <!-- Domain nodes -->
+        <div class="node domain ct-domain">CT Domain</div>
+        <div class="node domain dt-domain">DT Domain</div>
+        
+        <!-- CT TLO nodes -->
+        <div class="node tlo tlo2 ct-basic-signals">TLO2: Basic Signals</div>
+        <div class="node tlo tlo2 ct-transformations">TLO2: Transformations</div>
+        <div class="node tlo tlo2 ct-characterization">TLO2: Characterization</div>
+        <div class="node tlo tlo4 ct-lccde">TLO4: Systems as LCCDE</div>
+        <div class="node tlo tlo6 ct-lti">TLO6: LTI Systems</div>
+        
+        <!-- DT TLO nodes -->
+        <div class="node tlo tlo3 dt-basic-signals">TLO3: Basic Signals</div>
+        <div class="node tlo tlo3 dt-transformations">TLO3: Transformations</div>
+        <div class="node tlo tlo3 dt-characterization">TLO3: Characterization</div>
+        <div class="node tlo tlo5 dt-lccde">TLO5: Systems as LCCDE</div>
+        <div class="node tlo tlo7 dt-lti">TLO7: LTI Systems</div>
+        
+        <!-- CT Detail nodes -->
+        <div class="node detail ct-detail-1">Unit Step u(t)</div>
+        <div class="node detail ct-detail-2">Unit Impulse δ(t)</div>
+        <div class="node detail ct-detail-3">Exponential e^at</div>
+        <div class="node detail ct-detail-4">Time Shifting</div>
+        <div class="node detail ct-detail-5">Time Scaling</div>
+        <div class="node detail ct-detail-6">Amplitude Scale</div>
+        <div class="node detail ct-detail-7">Even/Odd</div>
+        <div class="node detail ct-detail-8">Periodic</div>
+        <div class="node detail ct-detail-9">Energy/Power</div>
+        <div class="node detail ct-detail-10">Diff Equations</div>
+        <div class="node detail ct-detail-11">Initial Conditions</div>
+        <div class="node detail ct-detail-12">Linearity</div>
+        <div class="node detail ct-detail-13">Time Invariance</div>
+        <div class="node detail ct-detail-14">Causality</div>
+        <div class="node detail ct-detail-15">Impulse h(t)</div>
+        <div class="node detail ct-detail-16">Convolution</div>
+        
+        <!-- DT Detail nodes -->
+        <div class="node detail dt-detail-1">Unit Step u[n]</div>
+        <div class="node detail dt-detail-2">Unit Impulse δ[n]</div>
+        <div class="node detail dt-detail-3">Exponential a^n</div>
+        <div class="node detail dt-detail-4">Time Shifting</div>
+        <div class="node detail dt-detail-5">Time Scaling</div>
+        <div class="node detail dt-detail-6">Amplitude Scale</div>
+        <div class="node detail dt-detail-7">Even/Odd</div>
+        <div class="node detail dt-detail-8">Periodic</div>
+        <div class="node detail dt-detail-9">Energy/Power</div>
+        <div class="node detail dt-detail-10">Diff Equations</div>
+        <div class="node detail dt-detail-11">Initial Conditions</div>
+        <div class="node detail dt-detail-12">Linearity</div>
+        <div class="node detail dt-detail-13">Time Invariance</div>
+        <div class="node detail dt-detail-14">Causality</div>
+        <div class="node detail dt-detail-15">Impulse h[n]</div>
+        <div class="node detail dt-detail-16">Convolution Sum</div>
+        
+        <!-- Legend -->
+        <div class="legend">
+            <h4>TLO Legend</h4>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #00d2d3, #54a0ff);"></div>
+                <span>TLO2: CT Signals</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #ff9ff3, #f368e0);"></div>
+                <span>TLO3: DT Signals</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #7bed9f, #2ed573);"></div>
+                <span>TLO4: CT LCCDE</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #ffa726, #ff7043);"></div>
+                <span>TLO5: DT LCCDE</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #ff6b9d, #c44569);"></div>
+                <span>TLO6: CT LTI Systems</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #a4b0be, #747d8c);"></div>
+                <span>TLO7: DT LTI Systems</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add hover effects and interactions
+        document.querySelectorAll('.node').forEach(node => {
+            node.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.05)';
+            });
+            
+            node.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click interactions for TLO nodes
+        document.querySelectorAll('.tlo').forEach(node => {
+            node.addEventListener('click', function() {
+                const tloNumber = this.textContent.match(/TLO\d/)[0];
+                alert(`${tloNumber}: ${this.textContent}\n\nClick on detail nodes to explore specific concepts!`);
+            });
+        });
+    </script>
+</body>
+</html>
+
