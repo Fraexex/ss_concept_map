@@ -68,8 +68,8 @@
             line-height: 50px;
         }
 
-        .ct-domain { top: 450px; left: 350px; } /* Adjusted position */
-        .dt-domain { top: 450px; left: 900px; } /* Adjusted position */
+        .ct-domain { top: 450px; left: 350px; }
+        .dt-domain { top: 450px; left: 900px; }
 
         /* TLO nodes */
         .tlo {
@@ -87,20 +87,24 @@
         .tlo5 { background: linear-gradient(135deg, #ffa726, #ff7043); color: white; }
         .tlo6 { background: linear-gradient(135deg, #ff6b9d, #c44569); color: white; }
         .tlo7 { background: linear-gradient(135deg, #a4b0be, #747d8c); color: white; }
+        .tlo8 { background: linear-gradient(135deg, #38ada9, #0fb9b1); color: white; }
+        .tlo9 { background: linear-gradient(135deg, #fd79a8, #e84393); color: white; }
 
         /* CT TLO positions */
-        .ct-basic-signals { top: 150px; left: 50px; } /* Adjusted position */
-        .ct-transformations { top: 150px; left: 275px; } /* Adjusted position */
-        .ct-characterization { top: 150px; left: 500px; } /* Adjusted position */
-        .ct-lccde { top: 450px; left: 50px; } /* Adjusted position */
-        .ct-lti { top: 700px; left: 275px; } /* Adjusted position */
+        .ct-basic-signals { top: 150px; left: 50px; }
+        .ct-transformations { top: 150px; left: 275px; }
+        .ct-characterization { top: 150px; left: 500px; }
+        .ct-lccde { top: 450px; left: 50px; }
+        .ct-lti { top: 700px; left: 275px; }
+        .ct-convolution { top: 800px; left: 275px; }
 
         /* DT TLO positions */
-        .dt-basic-signals { top: 150px; left: 750px; } /* Adjusted position */
-        .dt-transformations { top: 150px; left: 975px; } /* Adjusted position */
-        .dt-characterization { top: 150px; left: 1200px; } /* Adjusted position */
-        .dt-lccde { top: 450px; left: 1150px; } /* Adjusted position */
-        .dt-lti { top: 700px; left: 925px; } /* Adjusted position */
+        .dt-basic-signals { top: 150px; left: 750px; }
+        .dt-transformations { top: 150px; left: 975px; }
+        .dt-characterization { top: 150px; left: 1200px; }
+        .dt-lccde { top: 450px; left: 1150px; }
+        .dt-lti { top: 700px; left: 925px; }
+        .dt-convolution { top: 800px; left: 925px; }
 
         /* Detail nodes */
         .detail {
@@ -132,6 +136,9 @@
         .ct-detail-14 { top: 600px; left: 460px; }
         .ct-detail-15 { top: 650px; left: 250px; }
         .ct-detail-16 { top: 650px; left: 390px; }
+        .ct-detail-17 { top: 875px; left: 245px; }       /*TLO8*/
+        .ct-detail-18 { top: 875px; left: 385px; }
+        .ct-detail-19 { top: 910px; left: 315px; }
 
         /* Detail positions for DT */
         .dt-detail-1 { top: 70px; left: 720px; }
@@ -150,6 +157,9 @@
         .dt-detail-14 { top: 600px; left: 1100px; }
         .dt-detail-15 { top: 650px; left: 890px; }
         .dt-detail-16 { top: 650px; left: 1030px; }
+        .dt-detail-17 { top: 875px; left: 890px; }      /*TLO9*/
+        .dt-detail-18 { top: 875px; left: 1030px; }
+        .dt-detail-19 { top: 910px; left: 960px; }
 
         /* Connection lines */
         .connection {
@@ -160,49 +170,65 @@
 
         /* Main connections */
         .conn-root-ct {
-            width: 400px; /* Adjusted width */
+            width: 400px;
             height: 2px;
             top: 480px;
-            left: 250px; /* Centered connection */
+            left: 250px;
         }
         
         .conn-root-ct-up {
-            width: 300px; /* Adjusted width */
+            width: 300px;
             height: 2px;
             top: 480px;
-            left: 450px; /* Centered connection */
+            left: 450px;
             transform: rotate(-100deg);
         }
 
         .conn-root-ct-down {
-            width: 100px; /* Adjusted width */
+            width: 100px;
             height: 2px;
             top: 620px;
-            left: 425px; /* Centered connection */
+            left: 425px;
             transform: rotate(-80deg);
+        }
+        
+        .conn-root-ct-lti-conv {
+            width: 100px;
+            height: 2px;
+            top: 820px;
+            left: 385px;
+            transform: rotate(-90deg);
         }
 
         .conn-root-dt {
-            width: 400px; /* Adjusted width */
+            width: 400px;
             height: 2px;
             top: 480px;
-            left: 800px; /* Centered connection */
+            left: 800px;
         }
         
         .conn-root-dt-up {
-            width: 280px; /* Adjusted width */
+            width: 280px;
             height: 2px;
             top: 250px;
-            left: 1040px; /* Centered connection */
+            left: 1040px;
             transform: rotate(100deg);
         }
 
         .conn-root-dt-down {
-            width: 150px; /* Adjusted width */
+            width: 150px;
             height: 2px;
             top: 480px;
-            left: 1000px; /* Centered connection */
+            left: 1000px;
             transform: rotate(80deg);
+        }
+        
+        .conn-root-dt-lti-conv {
+            width: 100px;
+            height: 2px;
+            top: 820px;
+            left: 1035px;
+            transform: rotate(-90deg);
         }
 
         .legend {
@@ -245,11 +271,14 @@
     <div class="concept-map">
         <!-- Connection lines -->
         <div class="connection conn-root-ct"></div>
-        <div class="connection conn-root-dt"></div>
         <div class="connection conn-root-ct-up"></div>
         <div class="connection conn-root-ct-down"></div>
+        <div class="connection conn-root-ct-lti-conv"></div>
+        <div class="connection conn-root-dt"></div>
         <div class="connection conn-root-dt-up"></div>
         <div class="connection conn-root-dt-down"></div>
+        <div class="connection conn-root-dt-lti-conv"></div>
+        
         
         <!-- Root node -->
         <div class="node root">Signals & Systems</div>
@@ -264,6 +293,7 @@
         <div class="node tlo tlo2 ct-characterization">TLO2: Characterization</div>
         <div class="node tlo tlo4 ct-lccde">TLO4: Systems as LCCDE</div>
         <div class="node tlo tlo6 ct-lti">TLO6: LTI Systems</div>
+        <div class="node tlo tlo8 ct-convolution">TLO8: CT Convolution</div>
         
         <!-- DT TLO nodes -->
         <div class="node tlo tlo3 dt-basic-signals">TLO3: Basic Signals</div>
@@ -271,6 +301,7 @@
         <div class="node tlo tlo3 dt-characterization">TLO3: Characterization</div>
         <div class="node tlo tlo5 dt-lccde">TLO5: Systems as LCCDE</div>
         <div class="node tlo tlo7 dt-lti">TLO7: LTI Systems</div>
+        <div class="node tlo tlo9 dt-convolution">TLO9: DT Convolution</div>
         
         <!-- CT Detail nodes -->
         <div class="node detail ct-detail-1">Unit Step u(t)</div>
@@ -289,6 +320,10 @@
         <div class="node detail ct-detail-14">Causality</div>
         <div class="node detail ct-detail-15">Impulse h(t)</div>
         <div class="node detail ct-detail-16">Convolution</div>
+        <!-- TLO8 CT Convolution Detail nodes -->
+        <div class="node detail ct-detail-17">Graphical Method</div>
+        <div class="node detail ct-detail-18">Analytical Method</div>
+        <div class="node detail ct-detail-19">Properties</div>
         
         <!-- DT Detail nodes -->
         <div class="node detail dt-detail-1">Unit Step u[n]</div>
@@ -306,7 +341,11 @@
         <div class="node detail dt-detail-13">Time Invariance</div>
         <div class="node detail dt-detail-14">Causality</div>
         <div class="node detail dt-detail-15">Impulse h[n]</div>
-        <div class="node detail dt-detail-16">Convolution Sum</div>
+        <div class="node detail dt-detail-16">Convolution Sum</div>        
+        <!-- TLO9 DT Convolution Detail nodes -->
+        <div class="node detail dt-detail-17">Tabular Method</div>
+        <div class="node detail dt-detail-18">Formula Method</div>
+        <div class="node detail dt-detail-19">Properties</div>
         
         <!-- Legend -->
         <div class="legend">
@@ -335,6 +374,14 @@
                 <div class="legend-color" style="background: linear-gradient(135deg, #a4b0be, #747d8c);"></div>
                 <span>TLO7: DT LTI Systems</span>
             </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #38ada9, #0fb9b1);"></div>
+                <span>TLO8: CT Convolution</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #fd79a8, #e84393);"></div>
+                <span>TLO9: DT Convolution</span>
+            </div>
         </div>
     </div>
 
@@ -350,14 +397,185 @@
             });
         });
 
-        // Add click interactions for TLO nodes
+        // TLO information database
+        const tloInfo = {
+            'TLO2': {
+                title: 'Continuous-Time (CT) Signals',
+                description: 'Master the fundamentals of continuous-time signals and their mathematical representations.',
+                objectives: [
+                    'Understand basic signal types: unit step u(t), unit impulse δ(t), and exponential signals',
+                    'Apply signal transformations: time shifting, time scaling, and amplitude scaling',
+                    'Characterize signals by their properties: even/odd symmetry, periodicity, and energy/power'
+                ],
+                applications: 'Essential for analog signal processing, control systems, and communication systems'
+            },
+            'TLO3': {
+                title: 'Discrete-Time (DT) Signals',
+                description: 'Develop proficiency with discrete-time signals and their sequence-based representations.',
+                objectives: [
+                    'Work with discrete signals: unit step u[n], unit impulse δ[n], and exponential sequences',
+                    'Perform discrete transformations: shifting, scaling, and amplitude modifications',
+                    'Analyze discrete signal characteristics: symmetry, periodicity, and energy/power calculations'
+                ],
+                applications: 'Critical for digital signal processing, computer algorithms, and sampled data systems'
+            },
+            'TLO4': {
+                title: 'CT Systems as Linear Constant-Coefficient Differential Equations',
+                description: 'Solve continuous-time systems using differential equation methods.',
+                objectives: [
+                    'Formulate system behavior using linear constant-coefficient differential equations',
+                    'Apply initial conditions to find complete solutions',
+                    'Understand the relationship between system input, output, and internal dynamics'
+                ],
+                applications: 'Used in circuit analysis, mechanical systems, and continuous-time control design'
+            },
+            'TLO5': {
+                title: 'DT Systems as Linear Constant-Coefficient Difference Equations',
+                description: 'Analyze discrete-time systems through difference equation representations.',
+                objectives: [
+                    'Model discrete systems using linear constant-coefficient difference equations',
+                    'Solve for system response with given initial conditions',
+                    'Connect discrete-time system behavior to recursive algorithms'
+                ],
+                applications: 'Fundamental for digital filters, recursive algorithms, and discrete-time control'
+            },
+            'TLO6': {
+                title: 'CT Linear Time-Invariant (LTI) Systems',
+                description: 'Master the analysis of continuous-time LTI systems using convolution and impulse response.',
+                objectives: [
+                    'Test and verify system linearity and time-invariance properties',
+                    'Determine system causality and stability characteristics',
+                    'Calculate system output using convolution with impulse response h(t)'
+                ],
+                applications: 'Core to filter design, signal processing, and system identification in CT domain'
+            },
+            'TLO7': {
+                title: 'DT Linear Time-Invariant (LTI) Systems',
+                description: 'Analyze discrete-time LTI systems through convolution sum and impulse response methods.',
+                objectives: [
+                    'Verify linearity and time-invariance in discrete-time systems',
+                    'Assess causality and stability of discrete systems',
+                    'Compute system response using convolution sum with impulse response h[n]'
+                ],
+                applications: 'Essential for digital filter implementation, DSP algorithms, and discrete system design'
+            },
+            'TLO8': {
+                title: 'Continuous-Time Convolution',
+                description: 'Master the convolution integral for continuous-time signal and system analysis.',
+                objectives: [
+                    'Apply graphical convolution methods for visual understanding',
+                    'Solve convolution integrals analytically using mathematical techniques',
+                    'Utilize convolution properties: commutativity, associativity, and distributivity'
+                ],
+                applications: 'Fundamental for analog filter design, communication systems, and signal processing'
+            },
+            'TLO9': {
+                title: 'Discrete-Time Convolution',
+                description: 'Develop expertise in convolution sum for discrete-time signal and system analysis.',
+                objectives: [
+                    'Execute tabular convolution methods for systematic computation',
+                    'Calculate convolution sums using direct formula application',
+                    'Apply discrete convolution properties for efficient computation'
+                ],
+                applications: 'Critical for digital signal processing, FIR filters, and discrete system implementation'
+            }
+        };
+
+        // Enhanced click interactions for TLO nodes
         document.querySelectorAll('.tlo').forEach(node => {
             node.addEventListener('click', function() {
-                const tloNumber = this.textContent.match(/TLO\d/)[0];
-                alert(`${tloNumber}: ${this.textContent}\n\nClick on detail nodes to explore specific concepts!`);
+                const tloMatch = this.textContent.match(/TLO\d/);
+                if (tloMatch) {
+                    const tloNumber = tloMatch[0];
+                    const info = tloInfo[tloNumber];
+                    
+                    if (info) {
+                        // Create modal-like alert with detailed information
+                        let message = `🎯 ${info.title}\n\n`;
+                        message += `📝 Description:\n${info.description}\n\n`;
+                        message += `🎓 Learning Objectives:\n`;
+                        info.objectives.forEach((obj, index) => {
+                            message += `${index + 1}. ${obj}\n`;
+                        });
+                        message += `\n💡 Applications:\n${info.applications}\n\n`;
+                        message += `💭 Tip: Explore the detailed concept nodes below to dive deeper into specific topics!`;
+                        
+                        alert(message);
+                    }
+                }
+            });
+        });
+
+        // Add click interactions for detail nodes
+        document.querySelectorAll('.detail').forEach(node => {
+            node.addEventListener('click', function() {
+                const conceptName = this.textContent;
+                let message = `🔍 Concept: ${conceptName}\n\n`;
+                
+                // Add specific information based on concept type
+                if (conceptName.includes('Unit Step')) {
+                    message += `The unit step function is fundamental in signal analysis:\n`;
+                    message += `• CT: u(t) = 1 for t ≥ 0, 0 for t < 0\n`;
+                    message += `• DT: u[n] = 1 for n ≥ 0, 0 for n < 0\n`;
+                    message += `Used for modeling switched systems and signal gating.`;
+                } else if (conceptName.includes('Unit Impulse')) {
+                    message += `The unit impulse is the building block for system analysis:\n`;
+                    message += `• CT: δ(t) - Dirac delta function\n`;
+                    message += `• DT: δ[n] - Kronecker delta\n`;
+                    message += `Essential for impulse response and system characterization.`;
+                } else if (conceptName.includes('Convolution')) {
+                    message += `Convolution is the key operation for LTI system analysis:\n`;
+                    message += `• CT: y(t) = x(t) * h(t) = ∫ x(τ)h(t-τ)dτ\n`;
+                    message += `• DT: y[n] = x[n] * h[n] = Σ x[k]h[n-k]\n`;
+                    message += `Relates input, impulse response, and output.`;
+                } else if (conceptName.includes('Linearity')) {
+                    message += `Linearity property: superposition principle applies\n`;
+                    message += `• Additivity: T{x₁ + x₂} = T{x₁} + T{x₂}\n`;
+                    message += `• Homogeneity: T{ax} = aT{x}\n`;
+                    message += `Fundamental for linear system analysis.`;
+                } else if (conceptName.includes('Time Invariance')) {
+                    message += `Time invariance: system behavior doesn't change over time\n`;
+                    message += `• If y(t) = T{x(t)}, then y(t-t₀) = T{x(t-t₀)}\n`;
+                    message += `• System parameters remain constant\n`;
+                    message += `Enables powerful analysis techniques.`;
+                } else if (conceptName.includes('Graphical Method')) {
+                    message += `Graphical convolution for CT signals:\n`;
+                    message += `• Plot x(τ) and h(t-τ) vs. τ\n`;
+                    message += `• Slide h(t-τ) along τ axis\n`;
+                    message += `• Multiply and integrate overlapping regions\n`;
+                    message += `Visual approach helps understand convolution process.`;
+                } else if (conceptName.includes('Analytical Method')) {
+                    message += `Analytical convolution for CT signals:\n`;
+                    message += `• y(t) = ∫_{-∞}^{∞} x(τ)h(t-τ)dτ\n`;
+                    message += `• Break into regions based on signal support\n`;
+                    message += `• Evaluate integral for each region\n`;
+                    message += `Mathematical approach for exact solutions.`;
+                } else if (conceptName.includes('Tabular Method')) {
+                    message += `Tabular convolution for DT signals:\n`;
+                    message += `• Create table with x[k] and h[n-k] values\n`;
+                    message += `• Multiply corresponding entries\n`;
+                    message += `• Sum products for each n\n`;
+                    message += `Systematic approach for discrete convolution.`;
+                } else if (conceptName.includes('Formula Method')) {
+                    message += `Formula-based DT convolution:\n`;
+                    message += `• y[n] = Σ_{k=-∞}^{∞} x[k]h[n-k]\n`;
+                    message += `• Determine summation limits from signal support\n`;
+                    message += `• Evaluate sum for each output sample\n`;
+                    message += `Direct mathematical computation method.`;
+                } else if (conceptName.includes('Properties')) {
+                    message += `Convolution properties:\n`;
+                    message += `• Commutative: x*h = h*x\n`;
+                    message += `• Associative: (x*h₁)*h₂ = x*(h₁*h₂)\n`;
+                    message += `• Distributive: x*(h₁+h₂) = x*h₁ + x*h₂\n`;
+                    message += `These properties simplify complex calculations.`;
+                } else {
+                    message += `This is a key concept in signals and systems.\n`;
+                    message += `Click on related TLO nodes above for more context and learning objectives.`;
+                }
+                
+                alert(message);
             });
         });
     </script>
 </body>
 </html>
-
