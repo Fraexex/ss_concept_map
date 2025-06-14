@@ -518,7 +518,7 @@
         // Enhanced click interactions for TLO nodes
         document.querySelectorAll('.tlo').forEach(node => {
             node.addEventListener('click', function() {
-                const tloMatch = this.textContent.match(/TLO\d/);
+                const tloMatch = this.textContent.match(/TLO\d{1,2}/);
                 if (tloMatch) {
                     const tloNumber = tloMatch[0];
                     const info = tloInfo[tloNumber];
