@@ -91,6 +91,13 @@
         .tlo9 { background: linear-gradient(135deg, #fd79a8, #e84393); color: white; }
         .tlo10 { background: linear-gradient(135deg, #fd24a8, #de1433); color: white; }
         .tlo11 { background: linear-gradient(135deg, #4d4d4d, #abcdef); color: white; }
+        .tlo12 { background: linear-gradient(135deg, #ff9a9e, #fad0c4); color: #333; }
+        .tlo13 { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); color: #333; }
+        .tlo14 { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); color: white; }
+        .tlo15 { background: linear-gradient(135deg, #84fab0, #8fd3f4); color: #333; }
+        .tlo16 { background: linear-gradient(135deg, #d4fc79, #96e6a1); color: #333; }
+        .tlo17 { background: linear-gradient(135deg, #f6d365, #fda085); color: #333; }
+
 
         /* CT TLO positions */
         .ct-basic-signals { top: 600px; left: 850px; }
@@ -100,6 +107,9 @@
         .ct-lti { top: 1150px; left: 1075px; }
         .ct-convolution { top: 1250px; left: 1075px; }
         .ct-block-diagram { top: 770px; left: 1285px; }
+        .ct-tlo12 { top: 1400px; left: 900px; }
+        .ct-tlo14 { top: 1400px; left: 1100px; }
+        .ct-tlo16 { top: 1400px; left: 1300px; }
 
         /* DT TLO positions */
         .dt-basic-signals { top: 600px; left: 1550px; }
@@ -109,6 +119,9 @@
         .dt-lti { top: 1150px; left: 1725px; }
         .dt-convolution { top: 1250px; left: 1725px; }
         .dt-block-diagram { top: 770px; left: 1535px; }
+        .dt-tlo13 { top: 1400px; left: 1600px; }
+        .dt-tlo15 { top: 1400px; left: 1800px; }
+        .dt-tlo17 { top: 1400px; left: 2000px; }
 
         /* Detail nodes */
         .detail {
@@ -143,6 +156,10 @@
         .ct-detail-17 { top: 1325px; left: 1045px; }       /*TLO8*/
         .ct-detail-18 { top: 1325px; left: 1185px; }
         .ct-detail-19 { top: 1360px; left: 1115px; }
+        .ct-detail-20 { top: 1470px; left: 940px; }     /* Eigenfunctions details */
+        .ct-detail-21 { top: 1470px; left: 1080px; }
+        .ct-detail-22 { top: 1470px; left: 1220px; }
+        .ct-detail-23 { top: 1470px; left: 1360px; }    /* CT Fourier Transform details */
 
         /* Detail positions for DT */
         .dt-detail-1 { top: 520px; left: 1520px; }
@@ -164,6 +181,10 @@
         .dt-detail-17 { top: 1325px; left: 1690px; }      /*TLO9*/
         .dt-detail-18 { top: 1325px; left: 1830px; }
         .dt-detail-19 { top: 1360px; left: 1760px; }
+        .dt-detail-20 { top: 1470px; left: 1620px; }      /* DT Eigenfunctions details */
+        .dt-detail-21 { top: 1470px; left: 1760px; }
+        .dt-detail-22 { top: 1470px; left: 1900px; }
+        .dt-detail-23 { top: 1470px; left: 2040px; }      /* DT Fourier Series details */
 
         /* Connection lines */
         .connection {
@@ -299,6 +320,9 @@
         <div class="node tlo tlo6 ct-lti">TLO6: LTI Systems</div>
         <div class="node tlo tlo8 ct-convolution">TLO8: CT Convolution</div>
         <div class="node tlo tlo10 ct-block-diagram">TLO10: CT Block Diagrams</div>
+        <div class="node tlo tlo12 ct-tlo12">TLO12: CT Eigenfunctions</div>
+        <div class="node tlo tlo14 ct-tlo14">TLO14: CT Fourier Series</div>
+        <div class="node tlo tlo16 ct-tlo16">TLO16: CT Fourier Transform</div>
         
         <!-- DT TLO nodes -->
         <div class="node tlo tlo3 dt-basic-signals">TLO3: Basic Signals</div>
@@ -308,7 +332,10 @@
         <div class="node tlo tlo7 dt-lti">TLO7: LTI Systems</div>
         <div class="node tlo tlo9 dt-convolution">TLO9: DT Convolution</div>
         <div class="node tlo tlo11 dt-block-diagram">TLO11: DT Block Diagrams</div>
-        
+        <div class="node tlo tlo13 dt-tlo13">TLO13: DT Eigenfunctions</div>
+        <div class="node tlo tlo15 dt-tlo15">TLO15: DT Fourier Series</div>
+        <div class="node tlo tlo17 dt-tlo17">TLO17: DT Fourier Transform</div>
+
         <!-- CT Detail nodes -->
         <div class="node detail ct-detail-1">Unit Step u(t)</div>
         <div class="node detail ct-detail-2">Unit Impulse δ(t)</div>
@@ -330,6 +357,10 @@
         <div class="node detail ct-detail-17">Graphical Method</div>
         <div class="node detail ct-detail-18">Analytical Method</div>
         <div class="node detail ct-detail-19">Properties</div>
+        <div class="node detail ct-detail-20">Transfer Function</div>
+        <div class="node detail ct-detail-21">Frequency Response</div>
+        <div class="node detail ct-detail-22">Trigonometric Form</div>
+        <div class="node detail ct-detail-23">Complex Form</div>
         
         <!-- DT Detail nodes -->
         <div class="node detail dt-detail-1">Unit Step u[n]</div>
@@ -352,6 +383,10 @@
         <div class="node detail dt-detail-17">Tabular Method</div>
         <div class="node detail dt-detail-18">Formula Method</div>
         <div class="node detail dt-detail-19">Properties</div>
+        <div class="node detail dt-detail-20">Transfer Function</div>
+        <div class="node detail dt-detail-21">Frequency Response</div>
+        <div class="node detail dt-detail-22">Trigonometric Form</div>
+        <div class="node detail dt-detail-23">Complex Form</div>
         
         <!-- Legend -->
         <div class="legend">
@@ -395,6 +430,30 @@
             <div class="legend-item">
                 <div class="legend-color" style="background: linear-gradient(135deg, #4d4d4d, #abcdef);"></div>
                 <span>TLO11: DT Block Diagrams</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #ff9a9e, #fad0c4);"></div>
+                <span>TLO12: CT Eigenfunctions</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb);"></div>
+                <span>TLO13: DT Eigenfunctions</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #fbc2eb, #a6c1ee);"></div>
+                <span>TLO14: CT Fourier Series</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #84fab0, #8fd3f4);"></div>
+                <span>TLO15: DT Fourier Series</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #d4fc79, #96e6a1);"></div>
+                <span>TLO16: CT Fourier Transform</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #f6d365, #fda085);"></div>
+                <span>TLO17: DT Fourier Transform</span>
             </div>
         </div>
     </div>
@@ -512,6 +571,72 @@
                     'Apply discrete convolution properties for efficient computation'
                 ],
                 applications: 'Critical for digital signal processing, FIR filters, and discrete system implementation'
+            }
+            'TLO12': {
+                title: 'CT Eigenfunctions, Transfer Function & Frequency Response',
+                description: 'Master the relationship between complex exponentials, transfer functions, and frequency responses in continuous-time systems.',
+                objectives: [
+                    'Understand complex exponentials as eigenfunctions of CT LTI systems',
+                    'Derive transfer functions from system differential equations',
+                    'Analyze frequency response characteristics',
+                    'Connect pole-zero plots to system behavior'
+                ],
+                applications: 'Fundamental for filter design, control systems, and frequency-domain analysis'
+            },
+            'TLO13': {
+                title: 'DT Eigenfunctions, Transfer Function & Frequency Response',
+                description: 'Explore complex exponentials as eigenfunctions and their relationship to transfer functions in discrete-time systems.',
+                objectives: [
+                    'Identify complex exponentials as eigenfunctions of DT LTI systems',
+                    'Derive transfer functions from difference equations',
+                    'Analyze frequency response in discrete-time systems',
+                    'Understand periodicity of DT frequency response'
+                ],
+                applications: 'Essential for digital filter design, DSP algorithms, and discrete system analysis'
+            },
+            'TLO14': {
+                title: 'Continuous-Time Fourier Series',
+                description: 'Represent periodic continuous-time signals using orthogonal basis functions.',
+                objectives: [
+                    'Compute trigonometric Fourier series coefficients',
+                    'Work with complex exponential Fourier series',
+                    'Understand convergence properties',
+                    'Apply Parseval\'s theorem for power calculations'
+                ],
+                applications: 'Used in communications, harmonic analysis, and signal decomposition'
+            },
+            'TLO15': {
+                title: 'Discrete-Time Fourier Series',
+                description: 'Represent periodic discrete-time signals using orthogonal basis sequences.',
+                objectives: [
+                    'Compute DTFS coefficients for periodic sequences',
+                    'Understand the finite-length representation',
+                    'Apply discrete-time Fourier series properties',
+                    'Connect DTFS to discrete Fourier transform (DFT)'
+                ],
+                applications: 'Fundamental for digital signal processing and spectral analysis'
+            },
+            'TLO16': {
+                title: 'Continuous-Time Fourier Transform',
+                description: 'Extend Fourier analysis to aperiodic continuous-time signals.',
+                objectives: [
+                    'Compute Fourier transforms of common CT signals',
+                    'Apply Fourier transform properties',
+                    'Understand duality between time and frequency domains',
+                    'Analyze system behavior in frequency domain'
+                ],
+                applications: 'Essential for spectrum analysis, filtering, and modulation techniques'
+            },
+            'TLO17': {
+                title: 'Discrete-Time Fourier Transform',
+                description: 'Extend Fourier analysis to discrete-time aperiodic signals.',
+                objectives: [
+                    'Compute DTFT of discrete sequences',
+                    'Understand periodicity in frequency domain',
+                    'Apply DTFT properties and theorems',
+                    'Analyze sampling effects in frequency domain'
+                ],
+                applications: 'Critical for digital filter design, spectral analysis, and DSP applications'
             }
         };
 
