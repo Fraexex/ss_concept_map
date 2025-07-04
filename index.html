@@ -97,7 +97,13 @@
         .tlo15 { background: linear-gradient(135deg, #84fab0, #8fd3f4); color: white; }
         .tlo16 { background: linear-gradient(135deg, #d4fc79, #96e6a1); color: white; }
         .tlo17 { background: linear-gradient(135deg, #f6d365, #fda085); color: white; }
-
+        .tlo18 { background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; }
+        .tlo19 { background: linear-gradient(135deg, #3498db, #2980b9); color: white; }
+        .tlo20 { background: linear-gradient(135deg, #1abc9c, #16a085); color: white; }
+        .tlo21 { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
+        .tlo22 { background: linear-gradient(135deg, #f39c12, #d35400); color: white; }
+        .tlo23 { background: linear-gradient(135deg, #2c3e50, #34495e); color: white; }
+        .tlo24 { background: linear-gradient(135deg, #27ae60, #2ecc71); color: white; }
 
         /* CT TLO positions */
         .ct-basic-signals { top: 600px; left: 850px; }
@@ -110,6 +116,9 @@
         .ct-tlo12 { top: 1400px; left: 870px; }
         .ct-tlo14 { top: 1400px; left: 1080px; }
         .ct-tlo16 { top: 1400px; left: 1270px; }
+        .ct-tlo18 { top: 1600px; left: 810px; }  /* CT FR, Bode */
+        .ct-tlo20 { top: 1600px; left: 1042px; } /* CT Filters */
+        .ct-tlo23 { top: 1600px; left: 1270px; } /* Sampling */
 
         /* DT TLO positions */
         .dt-basic-signals { top: 600px; left: 1550px; }
@@ -122,6 +131,10 @@
         .dt-tlo13 { top: 1400px; left: 1540px; }
         .dt-tlo15 { top: 1400px; left: 1740px; }
         .dt-tlo17 { top: 1400px; left: 1940px; }
+        .dt-tlo19 { top: 1600px; left: 1540px; } /* DT FR */
+        .dt-tlo21 { top: 1600px; left: 1770px; } /* DT Filters */
+        .dt-tlo22 { top: 1600px; left: 2000px; } /* DFT/FFT */
+        .dt-tlo24 { top: 1800px; left: 1405px; } /* Reconstruction */
 
         /* Detail nodes */
         .detail {
@@ -160,6 +173,15 @@
         .ct-detail-21 { top: 1470px; left: 1040px; }
         .ct-detail-22 { top: 1470px; left: 1180px; }
         .ct-detail-23 { top: 1470px; left: 1320px; }    /* CT Fourier Transform details */
+        .ct-detail-24 { top: 1670px; left: 760px; }     /* CT FR details */
+        .ct-detail-25 { top: 1670px; left: 900px; }
+        .ct-detail-26 { top: 1705px; left: 830px; }
+        .ct-detail-27 { top: 1520px; left: 1002px; }    /* CT Filters details */
+        .ct-detail-28 { top: 1520px; left: 1142px; }
+        .ct-detail-29 { top: 1555px; left: 1072px; }
+        .ct-detail-30 { top: 1670px; left: 1230px; }    /* Sampling details */
+        .ct-detail-31 { top: 1670px; left: 1370px; }
+        .ct-detail-32 { top: 1705px; left: 1300px; }
 
         /* Detail positions for DT */
         .dt-detail-1 { top: 520px; left: 1520px; }
@@ -185,6 +207,18 @@
         .dt-detail-21 { top: 1470px; left: 1700px; }
         .dt-detail-22 { top: 1470px; left: 1840px; }
         .dt-detail-23 { top: 1470px; left: 1980px; }      /* DT Fourier Series details */
+        .dt-detail-24 { top: 1670px; left: 1520px; }      /* DT FR details */
+        .dt-detail-25 { top: 1670px; left: 1660px; }
+        .dt-detail-26 { top: 1705px; left: 1590px; }
+        .dt-detail-27 { top: 1520px; left: 1730px; }      /* DT Filters details */
+        .dt-detail-28 { top: 1520px; left: 1870px; }
+        .dt-detail-29 { top: 1555px; left: 1800px; }
+        .dt-detail-30 { top: 1670px; left: 1970px; }     /* DFT/FFT details */
+        .dt-detail-31 { top: 1670px; left: 2110px; }
+        .dt-detail-32 { top: 1705px; left: 2040px; }
+        .dt-detail-33 { top: 1870px; left: 1375px; }     /* Reconstruction details */
+        .dt-detail-34 { top: 1870px; left: 1515px; }
+        .dt-detail-35 { top: 1905px; left: 1440px; }
 
         /* Connection lines */
         .connection {
@@ -255,6 +289,46 @@
             left: 1835px;
             transform: rotate(-90deg);
         }
+        
+        .conn-ct-filters {
+            width: 100px;
+            height: 2px;
+            top: 1450px;
+            left: 1080px;
+            transform: rotate(-90deg);
+        }
+        
+        .conn-dt-filters {
+            width: 100px;
+            height: 2px;
+            top: 1450px;
+            left: 1740px;
+            transform: rotate(-90deg);
+        }
+        
+        .conn-dt-dft {
+            width: 100px;
+            height: 2px;
+            top: 1450px;
+            left: 1940px;
+            transform: rotate(-90deg);
+        }
+        
+        .conn-ct-sampling {
+            width: 100px;
+            height: 2px;
+            top: 1450px;
+            left: 1270px;
+            transform: rotate(-90deg);
+        }
+        
+        .conn-dt-reconstruction {
+            width: 100px;
+            height: 2px;
+            top: 1700px;
+            left: 1740px;
+            transform: rotate(-90deg);
+        }
 
         .legend {
             position: absolute;
@@ -303,7 +377,14 @@
         <div class="connection conn-root-dt-up"></div>
         <div class="connection conn-root-dt-down"></div>
         <div class="connection conn-root-dt-lti-conv"></div>
-        
+        <!-- New connections for additional TLOs -->
+        <div class="connection conn-ct-fr"></div>
+        <div class="connection conn-dt-fr"></div>
+        <div class="connection conn-ct-filters"></div>
+        <div class="connection conn-dt-filters"></div>
+        <div class="connection conn-dt-dft"></div>
+        <div class="connection conn-ct-sampling"></div>
+        <div class="connection conn-dt-reconstruction"></div>
         
         <!-- Root node -->
         <div class="node root">Signals & Systems</div>
@@ -323,6 +404,10 @@
         <div class="node tlo tlo12 ct-tlo12">TLO12: CT Eigenfunctions</div>
         <div class="node tlo tlo14 ct-tlo14">TLO14: CT Fourier Series</div>
         <div class="node tlo tlo16 ct-tlo16">TLO16: CT Fourier Transform</div>
+        <!-- New CT TLO nodes -->
+        <div class="node tlo tlo18 ct-tlo18">TLO18: CT FR & Bode</div>
+        <div class="node tlo tlo20 ct-tlo20">TLO20: CT Filters</div>
+        <div class="node tlo tlo23 ct-tlo23">TLO23: Sampling</div>
         
         <!-- DT TLO nodes -->
         <div class="node tlo tlo3 dt-basic-signals">TLO3: Basic Signals</div>
@@ -335,6 +420,11 @@
         <div class="node tlo tlo13 dt-tlo13">TLO13: DT Eigenfunctions</div>
         <div class="node tlo tlo15 dt-tlo15">TLO15: DT Fourier Series</div>
         <div class="node tlo tlo17 dt-tlo17">TLO17: DT Fourier Transform</div>
+        <!-- New DT TLO nodes -->
+        <div class="node tlo tlo19 dt-tlo19">TLO19: DT FR</div>
+        <div class="node tlo tlo21 dt-tlo21">TLO21: DT Filters</div>
+        <div class="node tlo tlo22 dt-tlo22">TLO22: DFT/FFT</div>
+        <div class="node tlo tlo24 dt-tlo24">TLO24: Reconstruction</div>
 
         <!-- CT Detail nodes -->
         <div class="node detail ct-detail-1">Unit Step u(t)</div>
@@ -361,6 +451,16 @@
         <div class="node detail ct-detail-21">Frequency Response</div>
         <div class="node detail ct-detail-22">Trigonometric Form</div>
         <div class="node detail ct-detail-23">Complex Form</div>
+        <!-- New CT Detail nodes -->
+        <div class="node detail ct-detail-24">Magnitude Plot</div>
+        <div class="node detail ct-detail-25">Phase Plot</div>
+        <div class="node detail ct-detail-26">Bode Plots</div>
+        <div class="node detail ct-detail-27">First Order</div>
+        <div class="node detail ct-detail-28">Second Order</div>
+        <div class="node detail ct-detail-29">Filter Types</div>
+        <div class="node detail ct-detail-30">Nyquist Rate</div>
+        <div class="node detail ct-detail-31">Aliasing</div>
+        <div class="node detail ct-detail-32">Ideal Sampling</div>
         
         <!-- DT Detail nodes -->
         <div class="node detail dt-detail-1">Unit Step u[n]</div>
@@ -387,6 +487,19 @@
         <div class="node detail dt-detail-21">Frequency Response</div>
         <div class="node detail dt-detail-22">Trigonometric Form</div>
         <div class="node detail dt-detail-23">Complex Form</div>
+        <!-- New DT Detail nodes -->
+        <div class="node detail dt-detail-24">Magnitude Plot</div>
+        <div class="node detail dt-detail-25">Phase Plot</div>
+        <div class="node detail dt-detail-26">Periodicity</div>
+        <div class="node detail dt-detail-27">First Order</div>
+        <div class="node detail dt-detail-28">Second Order</div>
+        <div class="node detail dt-detail-29">Filter Types</div>
+        <div class="node detail dt-detail-30">DFT Formula</div>
+        <div class="node detail dt-detail-31">FFT Algorithm</div>
+        <div class="node detail dt-detail-32">Properties</div>
+        <div class="node detail dt-detail-33">Ideal Reconstruction</div>
+        <div class="node detail dt-detail-34">Zero-Order Hold</div>
+        <div class="node detail dt-detail-35">Nyquist Theorem</div>
         
         <!-- Legend -->
         <div class="legend">
@@ -454,6 +567,35 @@
             <div class="legend-item">
                 <div class="legend-color" style="background: linear-gradient(135deg, #f6d365, #fda085);"></div>
                 <span>TLO17: DT Fourier Transform</span>
+            </div>
+            <!-- New legend items for additional TLOs -->
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);"></div>
+                <span>TLO18: CT FR & Bode</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #3498db, #2980b9);"></div>
+                <span>TLO19: DT FR</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #1abc9c, #16a085);"></div>
+                <span>TLO20: CT Filters</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #e74c3c, #c0392b);"></div>
+                <span>TLO21: DT Filters</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #f39c12, #d35400);"></div>
+                <span>TLO22: DFT/FFT</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #2c3e50, #34495e);"></div>
+                <span>TLO23: Sampling</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #27ae60, #2ecc71);"></div>
+                <span>TLO24: Reconstruction</span>
             </div>
         </div>
     </div>
@@ -637,6 +779,84 @@
                     'Analyze sampling effects in frequency domain'
                 ],
                 applications: 'Critical for digital filter design, spectral analysis, and DSP applications'
+            },
+            // New TLO information
+            'TLO18': {
+                title: 'CT Frequency Response & Bode Plots',
+                description: 'Analyze and visualize continuous-time system behavior in the frequency domain using Bode plots.',
+                objectives: [
+                    'Understand magnitude and phase response of CT systems',
+                    'Construct Bode magnitude and phase plots',
+                    'Identify corner frequencies and asymptotic approximations',
+                    'Analyze system stability from frequency response'
+                ],
+                applications: 'Essential for control system design, filter analysis, and frequency-domain system characterization'
+            },
+            'TLO19': {
+                title: 'DT Frequency Response',
+                description: 'Analyze discrete-time system behavior in the frequency domain.',
+                objectives: [
+                    'Understand magnitude and phase response of DT systems',
+                    'Analyze periodicity of DT frequency response',
+                    'Interpret pole-zero plots in frequency domain',
+                    'Connect frequency response to system behavior'
+                ],
+                applications: 'Critical for digital filter design, DSP applications, and discrete system analysis'
+            },
+            'TLO20': {
+                title: 'CT Filters (First & Second Order)',
+                description: 'Design and analyze first and second order continuous-time filters.',
+                objectives: [
+                    'Understand characteristics of first-order filters',
+                    'Analyze second-order filter responses',
+                    'Design basic filter circuits (RC, RLC)',
+                    'Evaluate filter performance metrics'
+                ],
+                applications: 'Used in audio processing, communications, and analog signal conditioning'
+            },
+            'TLO21': {
+                title: 'DT Filters (First & Second Order)',
+                description: 'Design and analyze first and second order discrete-time filters.',
+                objectives: [
+                    'Implement first-order recursive filters',
+                    'Design second-order IIR filters',
+                    'Analyze filter stability and performance',
+                    'Understand filter realization structures'
+                ],
+                applications: 'Essential for digital audio processing, telecommunications, and DSP applications'
+            },
+            'TLO22': {
+                title: 'Discrete Fourier Transform (DFT/FFT)',
+                description: 'Master the discrete Fourier transform and its efficient computation via FFT algorithms.',
+                objectives: [
+                    'Understand DFT theory and computation',
+                    'Apply FFT algorithms for efficient computation',
+                    'Analyze spectral leakage and windowing effects',
+                    'Connect DFT to DTFT and DTFS'
+                ],
+                applications: 'Fundamental for spectral analysis, digital signal processing, and real-time implementations'
+            },
+            'TLO23': {
+                title: 'Sampling',
+                description: 'Understand the theory and practice of sampling continuous-time signals.',
+                objectives: [
+                    'Apply the sampling theorem (Nyquist rate)',
+                    'Analyze aliasing effects and prevention',
+                    'Understand ideal sampling and practical implementations',
+                    'Connect sampling to reconstruction process'
+                ],
+                applications: 'Critical for analog-to-digital conversion, digital communications, and signal acquisition'
+            },
+            'TLO24': {
+                title: 'Reconstruction',
+                description: 'Master the process of reconstructing continuous-time signals from samples.',
+                objectives: [
+                    'Understand ideal reconstruction theory',
+                    'Analyze practical reconstruction methods (ZOH, FOH)',
+                    'Evaluate reconstruction filter requirements',
+                    'Connect reconstruction to sampling process'
+                ],
+                applications: 'Essential for digital-to-analog conversion, audio playback, and signal synthesis'
             }
         };
 
@@ -727,6 +947,69 @@
                     message += `• Associative: (x*h₁)*h₂ = x*(h₁*h₂)\n`;
                     message += `• Distributive: x*(h₁+h₂) = x*h₁ + x*h₂\n`;
                     message += `These properties simplify complex calculations.`;
+                } else if (conceptName.includes('Magnitude Plot')) {
+                    message += `Magnitude response shows how system amplifies/attenuates different frequencies:\n`;
+                    message += `• CT: |H(jω)| in dB (20log|H(jω)|)\n`;
+                    message += `• DT: |H(e^{jΩ})| in dB\n`;
+                    message += `Key for filter design and frequency analysis.`;
+                } else if (conceptName.includes('Phase Plot')) {
+                    message += `Phase response shows phase shift introduced at different frequencies:\n`;
+                    message += `• CT: ∠H(jω) in degrees\n`;
+                    message += `• DT: ∠H(e^{jΩ}) in degrees\n`;
+                    message += `Important for system stability and distortion analysis.`;
+                } else if (conceptName.includes('Bode Plots')) {
+                    message += `Bode plots combine magnitude and phase responses:\n`;
+                    message += `• Logarithmic frequency axis\n`;
+                    message += `• Asymptotic approximations (20dB/decade slopes)\n`;
+                    message += `Standard tool for CT system analysis and design.`;
+                } else if (conceptName.includes('First Order')) {
+                    message += `First-order systems have single energy storage element:\n`;
+                    message += `• CT: RC circuits, simple mechanical systems\n`;
+                    message += `• DT: Simple recursive filters\n`;
+                    message += `Characterized by single pole and -20dB/decade rolloff.`;
+                } else if (conceptName.includes('Second Order')) {
+                    message += `Second-order systems have two energy storage elements:\n`;
+                    message += `• CT: RLC circuits, mechanical oscillators\n`;
+                    message += `• DT: Biquad filters\n`;
+                    message += `Characterized by resonance and -40dB/decade rolloff.`;
+                } else if (conceptName.includes('Filter Types')) {
+                    message += `Common filter types:\n`;
+                    message += `• Lowpass: Pass low frequencies\n`;
+                    message += `• Highpass: Pass high frequencies\n`;
+                    message += `• Bandpass: Pass frequency band\n`;
+                    message += `• Bandstop: Reject frequency band\n`;
+                    message += `Design depends on application requirements.`;
+                } else if (conceptName.includes('Nyquist Rate')) {
+                    message += `Nyquist sampling theorem:\n`;
+                    message += `• Must sample at ≥ 2× highest frequency (fₛ ≥ 2fₘₐₓ)\n`;
+                    message += `• Critical for avoiding aliasing\n`;
+                    message += `Foundation of digital signal processing.`;
+                } else if (conceptName.includes('Aliasing')) {
+                    message += `Aliasing occurs when sampling is too slow:\n`;
+                    message += `• Higher frequencies "fold" into lower frequencies\n`;
+                    message += `• Causes distortion and information loss\n`;
+                    message += `Prevented by anti-aliasing filters.`;
+                } else if (conceptName.includes('DFT Formula')) {
+                    message += `Discrete Fourier Transform (DFT):\n`;
+                    message += `X[k] = Σ_{n=0}^{N-1} x[n]e^{-j2πkn/N}\n`;
+                    message += `• Computes frequency spectrum of finite sequence\n`;
+                    message += `• Basis for FFT algorithms\n`;
+                    message += `Fundamental for digital spectral analysis.`;
+                } else if (conceptName.includes('FFT Algorithm')) {
+                    message += `Fast Fourier Transform (FFT):\n`;
+                    message += `• Efficient algorithm for computing DFT\n`;
+                    message += `• Reduces complexity from O(N²) to O(N log N)\n`;
+                    message += `Enables real-time spectral analysis.`;
+                } else if (conceptName.includes('Ideal Reconstruction')) {
+                    message += `Ideal reconstruction:\n`;
+                    message += `• Uses sinc interpolation\n`;
+                    message += `• Perfect reconstruction when Nyquist satisfied\n`;
+                    message += `• Theoretical basis for practical methods.`;
+                } else if (conceptName.includes('Zero-Order Hold')) {
+                    message += `Zero-Order Hold (ZOH):\n`;
+                    message += `• Simplest practical reconstruction\n`;
+                    message += `• Holds sample value until next sample\n`;
+                    message += `Requires reconstruction filter.`;
                 } else {
                     message += `This is a key concept in signals and systems.\n`;
                     message += `Click on related TLO nodes above for more context and learning objectives.`;
